@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.7 on win32)" generated="20200408 12:42:00.876" rpa="false">
+<suite id="s1" name="FORLOOP" source="C:\Users\bouza\eclipse-workspace\YasmineTest\TestCases\FORLOOP.robot">
+<test id="s1-t1" name="Example1">
+<kw name="${animal} IN [ @{animaux} ]" type="for">
+<kw name="${animal} = dog" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${animal}</arg>
+</arguments>
+<msg timestamp="20200408 12:42:00.925" level="INFO">dog</msg>
+<status status="PASS" starttime="20200408 12:42:00.925" endtime="20200408 12:42:00.925"></status>
+</kw>
+<status status="PASS" starttime="20200408 12:42:00.924" endtime="20200408 12:42:00.925"></status>
+</kw>
+<kw name="${animal} = cat" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${animal}</arg>
+</arguments>
+<msg timestamp="20200408 12:42:00.926" level="INFO">cat</msg>
+<status status="PASS" starttime="20200408 12:42:00.925" endtime="20200408 12:42:00.926"></status>
+</kw>
+<status status="PASS" starttime="20200408 12:42:00.925" endtime="20200408 12:42:00.926"></status>
+</kw>
+<status status="PASS" starttime="20200408 12:42:00.924" endtime="20200408 12:42:00.926"></status>
+</kw>
+<status status="PASS" starttime="20200408 12:42:00.924" endtime="20200408 12:42:00.927" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Manage index manually">
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>-1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20200408 12:42:00.934" level="INFO">${index} = -1</msg>
+<status status="PASS" starttime="20200408 12:42:00.933" endtime="20200408 12:42:00.934"></status>
+</kw>
+<kw name="${item} IN [ @{LIST} ]" type="for">
+<kw name="${item} = =" type="foritem">
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>${index} + 1</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20200408 12:42:00.936" level="INFO">${index} = 0</msg>
+<status status="PASS" starttime="20200408 12:42:00.935" endtime="20200408 12:42:00.936"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${index}</arg>
+<arg>+</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200408 12:42:00.937" level="FAIL">Invalid log level '+'.</msg>
+<status status="FAIL" starttime="20200408 12:42:00.937" endtime="20200408 12:42:00.937"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.935" endtime="20200408 12:42:00.937"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.935" endtime="20200408 12:42:00.937"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.930" endtime="20200408 12:42:00.938" critical="yes">Invalid log level '+'.</status>
+</test>
+<test id="s1-t3" name="For-in-enumerate">
+<kw name="${index} | ${item} IN ENUMERATE [ @{LIST} ]" type="for">
+<kw name="${index} = 0, ${item} = =" type="foritem">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${index}</arg>
+<arg>${item}</arg>
+</arguments>
+<msg timestamp="20200408 12:42:00.946" level="FAIL">Invalid log level '='.</msg>
+<status status="FAIL" starttime="20200408 12:42:00.945" endtime="20200408 12:42:00.946"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.945" endtime="20200408 12:42:00.946"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.945" endtime="20200408 12:42:00.946"></status>
+</kw>
+<status status="FAIL" starttime="20200408 12:42:00.945" endtime="20200408 12:42:00.947" critical="yes">Invalid log level '='.</status>
+</test>
+<status status="FAIL" starttime="20200408 12:42:00.878" endtime="20200408 12:42:00.954"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="2">Critical Tests</stat>
+<stat pass="1" fail="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="2" id="s1" name="FORLOOP">FORLOOP</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
